@@ -1,3 +1,5 @@
+// create separate objects for different inventory items
+
 const speakers = {
     "name": "KEF 5.0 Speakers",
     "type": "electronics",
@@ -68,20 +70,25 @@ const bikeShoes = {
     "description": "These shoes clip into my bicycle pedals and give me a greater amount of control over my bicycle."
 }
 
+// initialize arrays to hold inventory objects of different types
 let electronics = [];
 let furniture = [];
 let sportsEquipment = [];
 
+// push items into their respective arrays
 electronics.push(speakers, receiver, appleTV);
 furniture.push(entertainmentCenter, sectionalSofa, diningTable);
 sportsEquipment.push(mountainBike, cyclocrossBike, bikeLight, bikeShoes);
 
+// create a homeInventory Database and assign the arrays to properties of the Database object
 let homeInventory = {
     "electronics": electronics,
     "furniture": furniture,
     "sportsEquipment": sportsEquipment
 }
 
+// serialize the Database with stringify
 const homeInventoryString = JSON.stringify(homeInventory);
+// store the serialized version in local Storage
 localStorage.setItem("homeInventory", homeInventoryString);
 
